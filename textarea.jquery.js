@@ -7,9 +7,9 @@
 	- Count of characters visible
 	- Allows CTRL + (...)
 	- Only run kepress and paste functionality in case the browser does not support the maxlength to textarea (HTML 5)
-	@ param Object
-	@ return undefined
-	@ author Evan L. Gonçalves
+	@param Object
+	@return undefined
+	@author Evandro L. Gonçalves
 */
 (function($){
 	$.fn.textarea = function(options){
@@ -25,7 +25,7 @@
 				current.after("<div class='maxValue'>" + (maxValue - valueSizeInit) + "</div>");
 			}
 			
-			if(!browserSupport()){
+			if(!browserSupport(current)){
 				current.keypress(function(e){
 					var 
 						code = e.charCode ? e.charCode : e.keyCode,
@@ -67,9 +67,9 @@
 			}
 		};
 		
-		browserSupport = function(){
+		browserSupport = function(elem){
 			var i = document.createElement('textarea');
-  			return "maxLength" in i;
+  			return ("maxLength" in i) && (elem.attr("maxlength") > 0);
 		};
 		
 		this.each(function(){

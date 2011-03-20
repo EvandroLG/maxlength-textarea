@@ -12,7 +12,7 @@
 		<textarea id="textarea3" maxlength="20"></textarea>
 		<textarea id="textarea4" maxlength="30"></textarea>
 		
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+		<script src="jquery.js"></script>
     	<script charset="utf-8" src="textarea.jquery.min.js"></script>
 		<script>
 			(function($){
